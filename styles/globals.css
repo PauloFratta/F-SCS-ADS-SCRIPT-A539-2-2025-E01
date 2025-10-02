@@ -1,0 +1,232 @@
+
+.header {
+  background-color: #7b8b41;
+  height: 90px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;   
+  text-align: center;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* rodapé */
+footer {
+  background-color: #7b8b41;
+  height: 60px;
+  max-width: 100%;
+  position: flex;
+  bottom: 0;
+  right: 0;   
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: #fff;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* nav logo abaixo do header */
+nav {
+  background-color: #73813d;
+  height: 40px;            /* altura mais fina */
+  width: 100%;
+  position: fixed;
+  top: 90px;               /* logo abaixo do header */
+  right: 0;   
+  z-index: 999;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* menu principal */
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  height: 40px;            /* mesma altura do nav */
+}
+
+.menu li {
+  position: relative; /* para submenu */
+  height: 40px;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;     /* centraliza verticalmente */
+  height: 40px;            /* mesma altura do nav */
+  padding: 0 20px;         /* horizontal somente */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  background-color: #7b8b41;
+  border-radius: 0;        /* sem borda arredondada para ficar rente */
+}
+
+/* submenu */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 40px; /* altura do nav */
+  left: -35px;
+  background-color: #7b8b41;
+  list-style: none;
+  min-width: 180px;
+  z-index: 1000;
+  margin: 0;
+  padding: 0;
+}
+
+.submenu li {
+  width: 100%;
+}
+
+.submenu a {
+  padding: 10px 15px;
+  display: block;
+}
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+.submenu a:hover {
+  background-color: #7b8b41;
+}
+
+#receita{
+    border: black;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*CSS DOS CARTOES DE RECEITA*/
+.card {
+  background-color: #f6efeb;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  width: 500px; /* largura fixa do card */
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px 0;
+  color: #5f6830;
+}
+
+.card p {
+  padding: 0 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  margin: 15px auto 20px;
+  padding: 10px 15px;
+  background-color: #5f6830;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #4c5325;
+}
+
+
+
+
+#sitetodo{
+    margin-top: 130px;
+    padding: 10px;
+    justify-content: center;
+}
+
+h2{
+    margin-left: 70px;
+    background-color: #7b8b41;
+    color: #FFFFFF;
+    border-radius: 40px;
+    padding: 10px;
+    text-align: center;
+    width:fit-content;
+}
+
+hr{
+    color: #7b8b41;
+}
+
+/*tabela receitas*/
+.tabelareceitas{
+    width: 100%;
+    column-count: 3;
+    column-gap: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*padding: 5px;*/
+}
