@@ -1,94 +1,121 @@
+:root {
+  --primary-color: #7b8b41; /* Verde Principal */
+  --secondary-color: #73813d; /* Verde Secundário */
+  --accent-color: #5f6830; /* Destaque */
+  --card-bg: #f6efeb;
+  --text-color: #333;
+  --light-text: #FFFFFF;
+}
 
+body {
+  background-color: var(--light-text);
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+}
+
+/* RODAPÉ (Footer) - Mantido no final para melhor organização */
+footer {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  height: auto; 
+  width: 100%;
+  position: relative;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+footer p {
+    margin: 3px 0;
+}
+
+.footer-links a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #cccccc;
+    text-decoration: underline;
+}
+
+
+/* HEADER - LIMPO: Apenas a logo centralizada */
 .header {
-  background-color: #7b8b41;
+  background-color: var(--primary-color);
   height: 90px;
   width: 100%;
   position: fixed;
   top: 0;
   right: 0;   
-  text-align: center;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center; /* Centraliza o conteúdo (a logo) */
+  display: flex; /* Usado para alinhamento vertical */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  z-index: 1000;
 }
 
-body {
-  background-color: #FFFFFF;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
+.header .logo {
+  /* Controla o tamanho da logo — ajustado para não quebrar layout */
   width: 100%;
-}
-
-/* rodapé */
-footer {
-  background-color: #7b8b41;
-  height: 60px;
-  width: 100%;
-  position:fixed;
-  display: flex;
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
+  height: 100px;
 }
 
 
-
-
-
-
-
-
-/* nav logo abaixo do header */
+/* NAV - Abaixo do header */
 nav {
-  background-color: #73813d;
-  height: 40px;            /* altura mais fina */
+  background-color: var(--secondary-color);
+  height: 40px;
   width: 100%;
   position: fixed;
-  top: 90px;               /* logo abaixo do header */
+  top: 90px; /* Ajustado para 90px, pois o header tem 90px */
   right: 0;   
   z-index: 999;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* menu principal */
+/* Menu principal */
 .menu {
   list-style: none;
   display: flex;
   justify-content: center;
   margin: 0;
   padding: 0;
-  height: 40px;            /* mesma altura do nav */
+  height: 40px;
 }
 
 .menu li {
-  position: relative; /* para submenu */
+  position: relative;
   height: 40px;
 }
 
 .menu a {
   display: flex;
-  align-items: center;     /* centraliza verticalmente */
-  height: 40px;            /* mesma altura do nav */
-  padding: 0 20px;         /* horizontal somente */
-  color: white;
+  align-items: center;
+  height: 40px;
+  padding: 0 20px;
+  color: var(--light-text);
   text-decoration: none;
   font-weight: bold;
 }
 
 .menu a:hover {
-  background-color: #7b8b41;
-  border-radius: 0;        /* sem borda arredondada para ficar rente */
+  background-color: var(--primary-color);
 }
 
-/* submenu */
+/* Submenu */
 .submenu {
   display: none;
   position: absolute;
-  top: 40px; /* altura do nav */
-  left: -35px;
-  background-color: #7b8b41;
+  top: 40px; 
+  left: -10px;
+  background-color: var(--primary-color);
   list-style: none;
   min-width: 180px;
   z-index: 1000;
@@ -96,88 +123,146 @@ nav {
   padding: 0;
 }
 
-.submenu li {
-  width: 100%;
-}
-
-.submenu a {
-  padding: 10px 15px;
-  display: block;
-}
-
 .dropdown:hover .submenu {
   display: block;
 }
 
 .submenu a:hover {
-  background-color: #7b8b41;
+  background-color: var(--accent-color);
 }
 
-#receita{
-    border: black;
-    width: 50px;
-    height: 50px;
-    background-color: black;
+/* CONTEÚDO PRINCIPAL */
+#sitetodo {
+    /* Compensando o header (90px) + nav (40px) = 130px */
+    margin-top: 130px; 
+    padding: 20px;
+    /* Adicionando um padding-bottom para não ser coberto pelo rodapé */
+    padding-bottom: 80px; 
+}
+
+/* GLOBAL H2 - corrigido para centralizar sem quebrar layout */
+h2 {
+    margin: 30px auto 20px;
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-radius: 40px;
+    padding: 10px 20px;
+    text-align: center;
+    width: fit-content;
+    font-size: 1.5rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: var(--primary-color);
+    margin: 40px 0;
+}
+
+/* Seção Receita do Dia */
+.recipe-of-the-day {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.recipe-of-the-day h2 {
+    margin-left: 0;
+}
+
+.day-recipe-content {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.day-recipe-content img {
+    width: 40%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.day-recipe-info {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.day-recipe-info h3 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.day-recipe-info p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.day-recipe-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.day-recipe-info ul li {
+    margin-bottom: 5px;
+    font-weight: 500;
 }
 
 
+.tabelareceitas {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 20px; 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*CSS DOS CARTOES DE RECEITA*/
 .card {
-  background-color: #f6efeb;
+  background-color: var(--card-bg);
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  width: 500px; /* largura fixa do card */
+  width: 300px;
   transition: transform 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
   width: 100%;
-  height: 150px;
+  height: 180px; 
   object-fit: cover;
 }
 
 .card h3 {
-  margin: 10px 0;
-  color: #5f6830;
+  margin: 15px 0 10px;
+  color: var(--accent-color);
 }
 
 .card p {
-  padding: 0 10px;
-  font-size: 14px;
-  color: #333;
+  padding: 0 15px;
+  font-size: 15px;
+  color: var(--text-color);
+  flex-grow: 1;
 }
 
 .btn {
   display: inline-block;
   margin: 15px auto 20px;
   padding: 10px 15px;
-  background-color: #5f6830;
-  color: white;
+  background-color: var(--accent-color);
+  color: var(--light-text);
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s;
@@ -188,55 +273,22 @@ nav {
 }
 
 
-
-
-#sitetodo{
-    margin-top: 130px;
-    padding: 10px;
-    justify-content: center;
-}
-
-h2{
-    margin-left: 70px;
-    background-color: #7b8b41;
-    color: #FFFFFF;
-    border-radius: 40px;
-    padding: 10px;
-    text-align: center;
-    width:fit-content;
-}
-
-hr{
-    color: #7b8b41;
-}
-
-/*tabela receitas*/
-.tabelareceitas{
-    width: 100%;
-    column-count: 3;
-    column-gap: 50px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /*padding: 5px;*/
-}
-
-
-/* colaboradores */
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 55px;
+  gap: 20px; 
   justify-content: center;
+  padding: 20px 0;
 }
 
 .cardcolab {
   display: flex;
   flex-direction: row;
-  background: #f6efeb;
+  background: var(--card-bg);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 400px;
+  width: 45%; 
+  max-width: 500px; 
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -247,10 +299,10 @@ hr{
 }
 
 .cardcolab img {
-  width: 120px;
-  height: 120px;
+  width: 140px; 
+  height: 140px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px; 
 }
 
 .info {
@@ -262,17 +314,16 @@ hr{
 
 .nomepessoa {
   font-size: 20px;
-  color: #5f6830;
+  color: var(--accent-color);
   margin-bottom: 6px;
   font-weight: bold;
 }
 
-#titulo {
+.colab-ranking {
   font-size: 1rem;
-  margin: 0;
+  margin: 0 0 8px 0;
   font-weight: bolder;
-  color: #ffffff;
-  border-radius: 10px;
+  color: var(--primary-color);
 }
 
 .descricao {
@@ -282,10 +333,476 @@ hr{
   line-height: 1.3;
 }
 
-/* Responsivo */
-@media (max-width: 1000px) {
-  .container {
+/* ESTILOS ESPECÍFICOS PARA A PÁGINA 'COLLABORATE.PHP' */
+/* O seletor .conteudo-padrao é específico o suficiente para esta seção */
+.conteudo-padrao {
+    max-width: 900px; /* Limita a largura do conteúdo para melhor leitura */
+    margin: 20px auto; /* Centraliza na página */
+    padding: 40px;
+    background-color: #FFFFFF; /* Fundo branco para o card de conteúdo */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo-padrao h2 {
+    /* Sobrescreve o h2 global para centralizar e usar o card-bg */
+    margin: 0 0 15px 0;
+    text-align: center;
+    width: 100%;
+    background-color: var(--card-bg);
+    color: var(--accent-color);
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 1.8rem;
+}
+
+.conteudo-padrao p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+/* Formulário de Colaboração (FINAL) */
+/* ALTERAÇÃO: agora o formulário usa 2 colunas por padrão e está centralizado */
+.form-colab {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* duas colunas para organizar melhor */
+    gap: 25px;
+    width: 80%; /* Limita a largura do formulário */
+    margin: 0 auto; /* Centraliza o formulário dentro do .conteudo-padrao */
+    justify-items: center;
+}
+
+/* Agrupamento de campos lado a lado (Título e Categoria) */
+.form-group-inline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    width: 100%;
+}
+
+/* Estilo para cada campo (label + input/select/textarea) */
+.input-field {
+    display: flex;
     flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+/* Campos que ocupam a largura total (Ingredientes e Preparo) */
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-colab label {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-colab input[type="text"],
+.form-colab select,
+.form-colab textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Formatação das Caixas */
+.form-colab input[type="text"],
+.form-colab select {
+    height: 45px; /* Altura fixa para inputs e selects */
+}
+
+.form-colab textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+    min-height: 150px; /* Altura mínima para os textareas */
+}
+
+.form-colab input[type="text"]:focus,
+.form-colab select:focus,
+.form-colab textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(95, 104, 48, 0.5);
+    outline: none;
+}
+
+/* Botão de Envio */
+/* ALTERAÇÃO: usa grid-column: 1 / -1 para ocupar as duas colunas e ficar centralizado */
+.form-colab .btn {
+    grid-column: 1 / -1; /* Ocupa todas as colunas */
+    justify-self: center;
+    width: 60%; /* Largura reduzida para centralizar melhor */
+    padding: 15px 25px;
+    background-color: var(--accent-color);
+    color: var(--light-text);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+    margin: 20px 0 0; /* Centraliza e adiciona margem superior */
+}
+
+.form-colab .btn:hover {
+    background-color: #4c5325;
+    transform: translateY(-2px);
+}
+
+.form-colab .btn:active {
+    transform: translateY(0);
+}
+/* FIM DOS ESTILOS ESPECÍFICOS PARA A PÁGINA 'COLLABORATE.PHP' */
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 1200px) {
+    .cardcolab {
+        width: 80%; 
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 900px) {
+    .tabelareceitas {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        max-width: 450px;
+    }
+    
+    /* Ajuste para o formulário em telas menores que 900px */
+    .conteudo-padrao {
+        padding: 20px;
+    }
+    
+    .form-colab {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+
+    .form-colab label,
+    .form-colab input[type="text"],
+    .form-colab select,
+    .form-colab textarea,
+    .form-colab .btn {
+        grid-column: 1 / 2;
+        width: 100%;
+    }
+    
+    .form-colab .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustes Gerais para mobile */
+    .header {
+        position: relative; /* Remove fixed position on small screens */
+    }
+    
+    .header .logo {
+        height: 60px;
+    }
+
+    nav {
+        position: relative; /* Remove fixed position */
+        top: 0;
+        height: auto;
+    }
+    
+    .menu {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu a {
+        height: 50px;
+        justify-content: center;
+    }
+
+    .submenu {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        min-width: unset;
+    }
+
+    #sitetodo {
+        margin-top: 20px; /* Ajusta o padding top */
+        padding-bottom: 60px;
+    }
+
+    /* Receita do Dia - Coluna em mobile */
+    .day-recipe-content {
+        flex-direction: column;
+    }
+
+    .day-recipe-content img,
+    .day-recipe-info {
+        width: 100%;
+        max-height: unset;
+    }
+
+    /* Colaboradores */
+    .cardcolab {
+        flex-direction: column;
+        width: 90%; 
+    }
+    
+    .cardcolab img {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px 10px 0 0;
+    }
+  
+    .recipe-main-content h1 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+/* Intro e Meta Dados */
+.recipe-intro {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.recipe-intro img {
+    width: 45%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.recipe-meta {
+    width: 55%;
+}
+
+.recipe-meta .summary {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.recipe-details div {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ddd;
+    font-size: 1rem;
+}
+
+/* Ingredientes e Modo de Preparo */
+.ingredients, .instructions {
+    padding: 20px 0;
+}
+
+.ingredients h2, .instructions h2 {
+    /* Remove a margem extra do h2 da página principal */
+    margin-left: 0; 
+    width: 100%;
+    text-align: left;
+    background: none;
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+    border-radius: 0;
+    padding: 5px 0 10px;
+    margin-bottom: 20px;
+}
+
+.ingredient-columns {
+    display: flex;
+    gap: 50px;
+}
+
+.ingredient-columns h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.ingredients ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ingredients ul li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%237b8b41" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>') no-repeat left center;
+    background-size: 18px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.instructions ol {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: step-counter;
+}
+
+.instructions ol li {
+    counter-increment: step-counter;
+    margin-bottom: 20px;
+    padding: 15px 15px 15px 60px;
+    border-left: 3px solid var(--accent-color);
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    position: relative;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.instructions ol li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-  }
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+}
+
+/* =========================
+   CORREÇÕES DO FORM COLAB
+   ========================= */
+
+/* Centraliza o formulário dentro da seção */
+.form-colab {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Campos lado a lado */
+.form-group-inline {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    margin-bottom: 25px;
+}
+
+/* Garante larguras adequadas */
+.form-group-inline .input-field {
+    flex: 1;
+}
+
+/* Full width mantém 100% da largura */
+.full-width {
+    width: 100%;
+}
+
+/* Ajuste de espaçamento dos inputs */
+.input-field label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.input-field input,
+.input-field select,
+.input-field textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* ================================
+   CENTRALIZAÇÃO DO DETALHE DA RECEITA
+   ================================ */
+
+.centralizar-receita {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.recipe-detail {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.10);
+}
+
+/* Centralizar textos principais */
+.recipe-detail h1,
+.recipe-detail h2,
+.recipe-detail h3,
+.recipe-summary {
+    text-align: center;
+}
+
+/* Imagem centralizada */
+.recipe-image-detail {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+/* Caixa de informações */
+.recipe-info-box {
+    text-align: center;
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.recipe-info-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recipe-info-box li {
+    margin: 6px 0;
+}
+
+/* Ingredientes e passos mais centralizados */
+.ingredients-section,
+.instructions-section {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Ajuste das listas */
+.ingredient-list,
+.preparation-steps {
+    margin-left: 0;
 }
