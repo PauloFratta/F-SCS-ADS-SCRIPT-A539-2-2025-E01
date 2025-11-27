@@ -5,105 +5,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/globals.css">
-    <title>Receitas Know</title>
+    <title>Receitas Know | Sua fonte de sabores</title>
     <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
 </head>
 
 <body>
-    <header class="header"">
-        <img src=" imagens/logo2.png" alt="Logo receitas know" width="2000" height="130px">
-
-        <nav>
-            <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li class="dropdown">
-                    <a href="#">Receitas</a>
-                    <ul class="submenu">
-                        <li><a href="#">Sobremesas</a></li>
-                        <li><a href="#">Pratos Principais</a></li>
-                        <li><a href="#">Bebidas</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Colabore</a></li>
-                <li><a href="#">Quem Somos</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <img src="imagens/logo2.png" alt="Logo Receitas Know" class="logo">
     </header>
 
-    <!--FAZER TODO O SITE DENTRO DESSA DIV, PROIBIDO EXCLUIR ELA-->
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Receitas</a>
+                <ul class="submenu">
+                    <li><a href="recipes.php?category=sobremesas">Sobremesas</a></li> 
+                    <li><a href="recipes.php?category=pratosprincipais">Pratos Principais</a></li>
+                    <li><a href="recipes.php?category=bebidas">Bebidas</a></li>
+                </ul>
+            </li>
+            <li><a href="collaborate.php">Colabore</a></li>
+            <li><a href="about.html">Quem Somos</a></li>
+        </ul>
+    </nav>
+    
     <div id="sitetodo">
-        <h2>Receitas em destaque</h2>
+        
+        <section class="recipe-of-the-day">
+            <h2>⭐ Receita do Dia: Pão de Queijo Mineiro</h2>
+            <div class="day-recipe-content">
+                <img src="imagens/paodequeijo.jpg" alt="Pão de Queijo">
+                <div class="day-recipe-info">
+                    <h3>Pão de Queijo Tradicional</h3>
+                    <p>Aprenda a fazer o verdadeiro pão de queijo, crocante por fora e macio por dentro. Receita perfeita para o café da manhã ou lanche da tarde.</p>
+                    <ul>
+                        <li>**Tempo de Preparo:** 45 min</li>
+                        <li>**Dificuldade:** Fácil</li>
+                        <li>**Rendimento:** 30 unidades</li>
+                    </ul>
+                    <a href="recipe-detail.php?id=123" class="btn">Ver Receita Completa</a>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <h2>Receitas em Destaque</h2>
         <div class="tabelareceitas">
             <div class="card">
                 <img src="imagens/bolochocolate.jpg" alt="Bolo de Chocolate">
                 <h3>Bolo de Chocolate</h3>
                 <p>Um delicioso bolo de chocolate fofinho e fácil de fazer.</p>
-                <a href="#" class="btn">Ver receita</a>
+                <a href="recipe-detail.php?id=456" class="btn">Ver receita</a>
             </div>
 
             <div class="card">
-                <img src="imagens/coxinha.jpg" alt="Bolo de Chocolate">
-                <h3>Coxinha</h3>
+                <img src="imagens/coxinha.jpg" alt="Coxinha">
+                <h3>Coxinha de Frango</h3>
                 <p>Coxinha crocante e deliciosa para o café da tarde!</p>
-                <a href="#" class="btn">Ver receita</a>
+                <a href="recipe-detail.php?id=789" class="btn">Ver receita</a>
             </div>
 
             <div class="card">
-                <img src="imagens/vitmorango.jpg" alt="Bolo de Chocolate">
+                <img src="imagens/vitmorango.jpg" alt="Vitamina de Morango">
                 <h3>Vitamina de Morango</h3>
                 <p>Uma cremosa vitamina docinha de morango!</p>
-                <a href="#" class="btn">Ver receita</a>
+                <a href="recipe-detail.php?id=150" class="btn">Ver receita</a>
             </div>
+
+            <div class="card">
+                <img src="imagens/macarraoabobrinha.jpg" alt="Espaguete de Abobrinha">
+                <h3>Espaguete de Abobrinha</h3>
+                <p>Uma deliciosa receita vegana!</p>
+                <a href="recipe-detail.php?id=140" class="btn">Ver receita</a>
+            </div>
+            
+            <div class="card">
+                <img src="imagens/strogonoff.jpg" alt="Strogonoff de Frango">
+                <h3>Estrogonoffe de Frango</h3>
+                <p>Estrogonofe: uma receita leve e fácil para surpreender na cozinha</p>
+                <a href="recipe-detail.php?id=130" class="btn">Ver receita</a>
+            </div>            
         </div>
 
         <hr>
 
-        <h2>Colaboradores em destaque</h2>
+        <h2>Colaboradores em Destaque</h2>
         <div class="container">
             <div class="cardcolab">
-                <img src="imagens/cozinheira1.jpg" alt="Imagem 1">
+                <img src="imagens/cozinheira1.jpg" alt="Aline Silva">
                 <div class="info">
                     <span class="nomepessoa">1° ALINE SILVA</span>
-                    <h2 id="titulo">15 colaborações essa semana</h2>
+                    <h4 class="colab-ranking">15 colaborações essa semana</h4>
                     <p class="descricao">Sou cozinheira há 10 anos. Assim que me formei em gastronomia iniciei minha jornada trabalhando em vários restaurantes por São Paulo.</p>
                 </div>
             </div>
 
             <div class="cardcolab">
-                <img src="imagens/cozinheira2.jpg" alt="Imagem 2">
+                <img src="imagens/cozinheira2.jpg" alt="Marina Costa">
                 <div class="info">
                     <span class="nomepessoa">2° MARINA COSTA</span>
-                    <h2 id="titulo">10 colaborações essa semana</h2>
-                    <p class="descricao">Cozinho desde de criança com a minha avó, poder espalhar as receitas que ela me ensinou é muito gratificante.</p>
+                    <h4 class="colab-ranking">10 colaborações essa semana</h4>
+                    <p class="descricao">Cozinho desde criança com a minha avó, poder espalhar as receitas que ela me ensinou é muito gratificante.</p>
                 </div>
             </div>
 
             <div class="cardcolab">
-                <img src="imagens/cozinheiro3.jpg" alt="Imagem 3">
+                <img src="imagens/cozinheiro3.jpg" alt="João Carlos">
                 <div class="info">
                     <span class="nomepessoa">3° JOÃO CARLOS</span>
-                    <h2 id="titulo">8 colaborações essa semana</h2>
+                    <h4 class="colab-ranking">8 colaborações essa semana</h4>
                     <p class="descricao">Me formei em gastronomia em 2018, assim venho espalhando na internet a importância de se comer e cozinhar comidas saudáveis.</p>
                 </div>
             </div>
 
             <div class="cardcolab">
-                <img src="imagens/cozinheira4.jpg" alt="Imagem 3">
+                <img src="imagens/cozinheira4.jpg" alt="Lucia Santos">
                 <div class="info">
                     <span class="nomepessoa">4° LUCIA SANTOS</span>
-                    <h2 id="titulo">7 colaborações essa semana</h2>
+                    <h4 class="colab-ranking">7 colaborações essa semana</h4>
                     <p class="descricao">Sou vegetariana há 7 anos, desde que iniciei essa jornada tive dificuldades de encontrar receitas na internet, então decidi eu mesma as criar.</p>
-                    </div>
                 </div>
-
-        
+            </div>
         </div>
-        <footer>
-            <p>Endereço: Rua 123</p>
-        </footer>
-        
+    </div>
 
-        
+    <footer>
+        <p>&copy; 2025 Receitas Know | Endereço: Rua 123</p>
+        <p class="footer-links"><a href="privacy.html">Política de Privacidade</a></p>
+    </footer>
 </body>
-
 </html>
